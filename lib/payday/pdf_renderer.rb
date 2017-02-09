@@ -19,6 +19,7 @@ module Payday
 
       # set up some default styling
       pdf.font_size(Payday::Config.default.pdf_font_size)
+      pdf.font_families.update(Payday::Config.default.pdf_font_families) if Payday::Config.default.pdf_font_families
       pdf.font Payday::Config.default.pdf_font
 
       stamp(invoice, pdf)
